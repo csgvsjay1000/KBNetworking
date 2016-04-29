@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "VRShowTabbarController.h"
+#import "VRShowNavController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    VRShowTabbarController *mainTab = [[VRShowTabbarController alloc] init];
+    VRShowNavController *nav = [[VRShowNavController alloc] initWithRootViewController:mainTab];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
