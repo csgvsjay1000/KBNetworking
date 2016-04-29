@@ -130,6 +130,15 @@
     }];
 }
 
+-(void)show{
+    self.hidden = NO;
+    
+}
+
+-(void)hide{
+    self.hidden = YES;
+}
+
 #pragma mark - setters and getters
 -(UILabel *)titleLabel{
     if (_titleLabel == nil) {

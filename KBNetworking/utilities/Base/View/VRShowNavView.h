@@ -29,6 +29,9 @@
 
 @interface VRNoDataView : UIView
 
+-(void)show;
+
+-(void)hide;
 
 @end
 

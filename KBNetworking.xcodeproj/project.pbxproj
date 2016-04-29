@@ -43,6 +43,12 @@
 		4C79A0561CD3265700D7C74C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C79A0481CD3265700D7C74C /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		4C79A0571CD3265700D7C74C /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C79A04A1CD3265700D7C74C /* View+MASAdditions.m */; };
 		4C79A0581CD3265700D7C74C /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C79A04D1CD3265700D7C74C /* ViewController+MASAdditions.m */; };
+		4C79A05D1CD3330E00D7C74C /* KBAPIBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C79A05C1CD3330E00D7C74C /* KBAPIBaseManager.m */; };
+		4C79A0601CD3413600D7C74C /* IndexApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C79A05F1CD3413600D7C74C /* IndexApiManager.m */; };
+		4C79A0631CD345F200D7C74C /* KBNetAppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C79A0621CD345F200D7C74C /* KBNetAppContext.m */; };
+		4C79A0661CD3499C00D7C74C /* KBURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C79A0651CD3499C00D7C74C /* KBURLResponse.m */; };
+		4C79A0691CD352B800D7C74C /* KBApiProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C79A0681CD352B800D7C74C /* KBApiProxy.m */; };
+		4C79A06E1CD36AE200D7C74C /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C79A06D1CD36AE200D7C74C /* HomeCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +146,19 @@
 		4C79A04B1CD3265700D7C74C /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		4C79A04C1CD3265700D7C74C /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		4C79A04D1CD3265700D7C74C /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		4C79A05B1CD3330E00D7C74C /* KBAPIBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBAPIBaseManager.h; sourceTree = "<group>"; };
+		4C79A05C1CD3330E00D7C74C /* KBAPIBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBAPIBaseManager.m; sourceTree = "<group>"; };
+		4C79A05E1CD3413600D7C74C /* IndexApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexApiManager.h; sourceTree = "<group>"; };
+		4C79A05F1CD3413600D7C74C /* IndexApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexApiManager.m; sourceTree = "<group>"; };
+		4C79A0611CD345F200D7C74C /* KBNetAppContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBNetAppContext.h; sourceTree = "<group>"; };
+		4C79A0621CD345F200D7C74C /* KBNetAppContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBNetAppContext.m; sourceTree = "<group>"; };
+		4C79A0641CD3499C00D7C74C /* KBURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBURLResponse.h; sourceTree = "<group>"; };
+		4C79A0651CD3499C00D7C74C /* KBURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBURLResponse.m; sourceTree = "<group>"; };
+		4C79A0671CD352B800D7C74C /* KBApiProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBApiProxy.h; sourceTree = "<group>"; };
+		4C79A0681CD352B800D7C74C /* KBApiProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBApiProxy.m; sourceTree = "<group>"; };
+		4C79A06A1CD3556B00D7C74C /* KBNetworkingConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KBNetworkingConfiguration.h; sourceTree = "<group>"; };
+		4C79A06C1CD36AE200D7C74C /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
+		4C79A06D1CD36AE200D7C74C /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +296,7 @@
 		4C79A0011CD30F2600D7C74C /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				4C79A05A1CD332E500D7C74C /* Network */,
 				4C79A0021CD30F2600D7C74C /* Controller */,
 				4C79A0031CD30F2600D7C74C /* View */,
 			);
@@ -353,6 +373,8 @@
 		4C79A00A1CD310D400D7C74C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4C79A06B1CD3678700D7C74C /* Reformer */,
+				4C79A0591CD332A600D7C74C /* Network */,
 				4C79A00B1CD310D400D7C74C /* Controller */,
 				4C79A00C1CD310D400D7C74C /* View */,
 			);
@@ -371,6 +393,8 @@
 		4C79A00C1CD310D400D7C74C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4C79A06C1CD36AE200D7C74C /* HomeCollectionViewCell.h */,
+				4C79A06D1CD36AE200D7C74C /* HomeCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -456,6 +480,38 @@
 				4C79A04D1CD3265700D7C74C /* ViewController+MASAdditions.m */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		4C79A0591CD332A600D7C74C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4C79A05E1CD3413600D7C74C /* IndexApiManager.h */,
+				4C79A05F1CD3413600D7C74C /* IndexApiManager.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4C79A05A1CD332E500D7C74C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4C79A05B1CD3330E00D7C74C /* KBAPIBaseManager.h */,
+				4C79A05C1CD3330E00D7C74C /* KBAPIBaseManager.m */,
+				4C79A0611CD345F200D7C74C /* KBNetAppContext.h */,
+				4C79A0621CD345F200D7C74C /* KBNetAppContext.m */,
+				4C79A0641CD3499C00D7C74C /* KBURLResponse.h */,
+				4C79A0651CD3499C00D7C74C /* KBURLResponse.m */,
+				4C79A0671CD352B800D7C74C /* KBApiProxy.h */,
+				4C79A0681CD352B800D7C74C /* KBApiProxy.m */,
+				4C79A06A1CD3556B00D7C74C /* KBNetworkingConfiguration.h */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4C79A06B1CD3678700D7C74C /* Reformer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reformer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -592,12 +648,16 @@
 			files = (
 				4C799FEF1CD30D1300D7C74C /* AFURLSessionManager.m in Sources */,
 				4C79A0151CD3111300D7C74C /* HomePageViewController.m in Sources */,
+				4C79A0661CD3499C00D7C74C /* KBURLResponse.m in Sources */,
 				4C79A0551CD3265700D7C74C /* NSArray+MASAdditions.m in Sources */,
+				4C79A06E1CD36AE200D7C74C /* HomeCollectionViewCell.m in Sources */,
 				4C799F8A1CD309F900D7C74C /* ViewController.m in Sources */,
 				4C799F871CD309F900D7C74C /* AppDelegate.m in Sources */,
 				4C79A04F1CD3265700D7C74C /* MASCompositeConstraint.m in Sources */,
+				4C79A0631CD345F200D7C74C /* KBNetAppContext.m in Sources */,
 				4C79A0531CD3265700D7C74C /* MASViewAttribute.m in Sources */,
 				4C79A0501CD3265700D7C74C /* MASConstraint.m in Sources */,
+				4C79A0691CD352B800D7C74C /* KBApiProxy.m in Sources */,
 				4C799FEB1CD30D1300D7C74C /* AFNetworkReachabilityManager.m in Sources */,
 				4C79A0181CD3113C00D7C74C /* MyselfViewController.m in Sources */,
 				4C79A02F1CD3122600D7C74C /* VRShowTabbarView.m in Sources */,
@@ -606,10 +666,12 @@
 				4C79A0211CD3119700D7C74C /* VRShowTabbarController.m in Sources */,
 				4C79A01B1CD3115300D7C74C /* MoviesViewController.m in Sources */,
 				4C79A0521CD3265700D7C74C /* MASLayoutConstraint.m in Sources */,
+				4C79A0601CD3413600D7C74C /* IndexApiManager.m in Sources */,
 				4C79A0321CD324BF00D7C74C /* BusinessTools.m in Sources */,
 				4C79A0541CD3265700D7C74C /* MASViewConstraint.m in Sources */,
 				4C79A01E1CD3116800D7C74C /* GameViewController.m in Sources */,
 				4C799F841CD309F900D7C74C /* main.m in Sources */,
+				4C79A05D1CD3330E00D7C74C /* KBAPIBaseManager.m in Sources */,
 				4C79A0571CD3265700D7C74C /* View+MASAdditions.m in Sources */,
 				4C799FEC1CD30D1300D7C74C /* AFSecurityPolicy.m in Sources */,
 				4C79A02E1CD3122600D7C74C /* VRShowNavView.m in Sources */,
