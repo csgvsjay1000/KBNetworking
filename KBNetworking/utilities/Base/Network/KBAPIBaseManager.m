@@ -15,6 +15,7 @@
 
 @property(nonatomic,readwrite)KBAPIManagerErrorType errorType;
 @property (nonatomic, strong) NSMutableArray *requestIdList;
+@property (nonatomic, strong, readwrite) id fetchedRawData;
 
 
 @end
@@ -31,6 +32,17 @@
     }
     return self;
 }
+
+- (id)fetchDataWithReformer:(id<KBAPIManagerCallbackDataReformer>)reformer{
+    id resultData = nil;
+    if ([reformer respondsToSelector:@selector(manager:reformData:)]) {
+        resultData = [reformer manager:self reformData:self.fetchedRawData];
+    } else {
+        resultData = [self.fetchedRawData mutableCopy];
+    }
+    return resultData;
+}
+
 
 #pragma mark calling api
 -(NSInteger)loadData{
@@ -63,6 +75,11 @@
 
 #pragma mark - api callbacks
 -(void)successedOnCallingAPI:(KBURLResponse *)response{
+    if (response.content) {
+        self.fetchedRawData = [response.content copy];
+    } else {
+        self.fetchedRawData = [response.responseData copy];
+    }
     [self removeRequestIdWithRequestID:response.requestId];
     [self.delegate managerCallAPIDidSuccess:self];
 }

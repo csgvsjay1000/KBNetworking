@@ -10,4 +10,10 @@
 
 @implementation IndexApiManager
 
+
+- (NSString *)methodName{
+    return @"app/index/resources/list/service";
+}
+
+
 @end

@@ -8,6 +8,6 @@
 
 #import "KBAPIBaseManager.h"
 
-@interface IndexApiManager : KBAPIBaseManager
+@interface IndexApiManager : KBAPIBaseManager<KBAPIManager>
 
 @end

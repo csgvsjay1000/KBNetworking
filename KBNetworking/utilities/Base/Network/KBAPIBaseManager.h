@@ -35,6 +35,12 @@ typedef NS_ENUM (NSUInteger, KBAPIManagerErrorType){
     KBAPIManagerErrorTypeNoNetWork      //网络不通。在调用API之前会判断一下当前网络是否通畅，这个也是在调用API之前验证的，和上面超时的状态是有区别的。
 };
 
+@protocol KBAPIManagerCallbackDataReformer <NSObject>
+@required
+- (id)manager:(KBAPIBaseManager *)manager reformData:(NSDictionary *)data;
+
+@end
+
 /*
  RTAPIBaseManager的派生类必须符合这些protocal
  */
@@ -42,7 +48,6 @@ typedef NS_ENUM (NSUInteger, KBAPIManagerErrorType){
 
 @required
 - (NSString *)methodName;
-- (NSString *)serviceType;
 
 @optional
 - (void)cleanData;
@@ -59,7 +64,7 @@ typedef NS_ENUM (NSUInteger, KBAPIManagerErrorType){
 
 @property (nonatomic, readonly) KBAPIManagerErrorType errorType;
 
-
+- (id)fetchDataWithReformer:(id<KBAPIManagerCallbackDataReformer>)reformer;
 
 -(NSInteger)loadData;
 
