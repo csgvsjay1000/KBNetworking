@@ -41,6 +41,8 @@ typedef NS_ENUM (NSUInteger, KBAPIManagerErrorType){
 
 @end
 
+
+
 /*
  RTAPIBaseManager的派生类必须符合这些protocal
  */

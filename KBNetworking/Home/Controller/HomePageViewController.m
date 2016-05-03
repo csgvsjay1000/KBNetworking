@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "IndexApiManager.h"
 #import "HomeCollectionViewCell.h"
+#import "CarouselReformer.h"
 
 @interface HomePageViewController ()<KBAPIManagerApiCallBackDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -18,6 +19,12 @@
 @property(nonatomic,strong)UICollectionView *collectionView;
 
 @property(nonatomic,strong)IndexApiManager *indexManager;
+
+@property(nonatomic,strong)id<KBAPIManagerCallbackDataReformer> carselReformer;
+@property(nonatomic,strong)id<KBAPIManagerCallbackDataReformer> indexReformer;
+
+@property(nonatomic,strong)NSDictionary *indexDictionary;
+
 
 @end
 
@@ -64,7 +71,7 @@
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeCollectionViewCell" forIndexPath:indexPath];
-    
+    [cell configWithData:self.indexDictionary[kPropertyFocusImgList]];
     return cell;
 }
 
@@ -73,7 +80,8 @@
     
     if ([manager isKindOfClass:[IndexApiManager class]]) {
         //首页api
-        
+        self.indexDictionary = [manager fetchDataWithReformer:self.indexReformer];
+        [self.collectionView reloadData];
     }
     
 }

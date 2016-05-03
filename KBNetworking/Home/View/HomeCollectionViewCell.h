@@ -10,4 +10,6 @@
 
 @interface HomeCollectionViewCell : UICollectionViewCell
 
+- (void)configWithData:(NSDictionary *)data;
+
 @end

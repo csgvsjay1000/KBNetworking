@@ -7,6 +7,7 @@
 //
 
 #import "HomeCollectionViewCell.h"
+#import "CarouselReformerKeys.h"
 
 @implementation HomeCollectionViewCell
 
@@ -16,6 +17,10 @@
         self.backgroundColor = [UIColor redColor];
     }
     return self;
+}
+
+- (void)configWithData:(NSDictionary *)data{
+    NSLog(@"%@",data[kPropertyFocusImgPath]);
 }
 
 @end

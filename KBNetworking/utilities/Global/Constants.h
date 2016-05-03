@@ -65,6 +65,7 @@ typedef void(^VRSHowButtonPressedBlock)(id);
 //#import "SVProgressHUD.h"
 //#import "UIImageView+WebCache.h"
 #import "VRShowNavView.h"
+#import "KBAPIBaseManager.h"
 
 //网络请求配置文件
 //#import <SystemConfiguration/SystemConfiguration.h>

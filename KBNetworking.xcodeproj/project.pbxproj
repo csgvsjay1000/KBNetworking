@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C5741581CD88840005C31E1 /* IndexPageReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5741571CD88840005C31E1 /* IndexPageReformer.m */; };
+		4C57415B1CD8ADF0005C31E1 /* CarouselReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C57415A1CD8ADF0005C31E1 /* CarouselReformer.m */; };
 		4C799F841CD309F900D7C74C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C799F831CD309F900D7C74C /* main.m */; };
 		4C799F871CD309F900D7C74C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C799F861CD309F900D7C74C /* AppDelegate.m */; };
 		4C799F8A1CD309F900D7C74C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C799F891CD309F900D7C74C /* ViewController.m */; };
@@ -70,8 +70,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C5741561CD88840005C31E1 /* IndexPageReformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexPageReformer.h; sourceTree = "<group>"; };
-		4C5741571CD88840005C31E1 /* IndexPageReformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexPageReformer.m; sourceTree = "<group>"; };
+		4C5741591CD8ADF0005C31E1 /* CarouselReformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselReformer.h; sourceTree = "<group>"; };
+		4C57415A1CD8ADF0005C31E1 /* CarouselReformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselReformer.m; sourceTree = "<group>"; };
+		4C57415D1CD8B1CB005C31E1 /* CarouselReformerKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselReformerKeys.h; sourceTree = "<group>"; };
 		4C799F7F1CD309F900D7C74C /* KBNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KBNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C799F831CD309F900D7C74C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4C799F851CD309F900D7C74C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -513,8 +514,9 @@
 		4C79A06B1CD3678700D7C74C /* Reformer */ = {
 			isa = PBXGroup;
 			children = (
-				4C5741561CD88840005C31E1 /* IndexPageReformer.h */,
-				4C5741571CD88840005C31E1 /* IndexPageReformer.m */,
+				4C5741591CD8ADF0005C31E1 /* CarouselReformer.h */,
+				4C57415A1CD8ADF0005C31E1 /* CarouselReformer.m */,
+				4C57415D1CD8B1CB005C31E1 /* CarouselReformerKeys.h */,
 			);
 			path = Reformer;
 			sourceTree = "<group>";
@@ -676,6 +678,7 @@
 				4C79A0541CD3265700D7C74C /* MASViewConstraint.m in Sources */,
 				4C79A01E1CD3116800D7C74C /* GameViewController.m in Sources */,
 				4C799F841CD309F900D7C74C /* main.m in Sources */,
+				4C57415B1CD8ADF0005C31E1 /* CarouselReformer.m in Sources */,
 				4C79A05D1CD3330E00D7C74C /* KBAPIBaseManager.m in Sources */,
 				4C79A0571CD3265700D7C74C /* View+MASAdditions.m in Sources */,
 				4C799FEC1CD30D1300D7C74C /* AFSecurityPolicy.m in Sources */,
@@ -684,7 +687,6 @@
 				4C79A0241CD311C600D7C74C /* VRShowNavController.m in Sources */,
 				4C79A0581CD3265700D7C74C /* ViewController+MASAdditions.m in Sources */,
 				4C799FEE1CD30D1300D7C74C /* AFURLResponseSerialization.m in Sources */,
-				4C5741581CD88840005C31E1 /* IndexPageReformer.m in Sources */,
 				4C79A02C1CD3122600D7C74C /* VRShowItemView.m in Sources */,
 				4C799FEA1CD30D1300D7C74C /* AFHTTPSessionManager.m in Sources */,
 			);
