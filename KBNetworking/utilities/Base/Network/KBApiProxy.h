@@ -19,5 +19,7 @@ typedef void(^AXCallback)(KBURLResponse *response);
 
 - (void)cancelRequestWithRequestID:(NSNumber *)requestID;
 
+- (void)cancelRequestWithRequestIDList:(NSArray *)requestIDList;
+
 
 @end

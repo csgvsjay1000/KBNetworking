@@ -18,7 +18,7 @@
 //正式环境
 #define Domain @"http://120.76.79.49:38080/VR_Service/api/"
 
-#define MD5_Key @"92A864886F70D010101050101010500048202613082025D02010002818"
+//#define MD5_Key @"92A864886F70D010101050101010500048202613082025D02010002818"
 
 #define kRSAPublicKey @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDQ9mIWe63OiIDRh9invj8PL+xQoKIcn3zlu08GCqBzCwPxcMzSfDgzPrW22VCax30sqZnycMMWXesCZLHMW7gJYyVjfGo5/dsE0rKFJ7lExJfUNOBC7fkAzoz07qpkgDHHSKc11edT7cxCh/UrEEzjeQ4/6enixYzDoWfA8upL1QIDAQAB"
 
@@ -61,7 +61,7 @@ typedef void(^VRSHowButtonPressedBlock)(id);
 
 //import
 #import "Masonry.h"
-//#import "BusinessTools.h"
+#import "BusinessTools.h"
 //#import "SVProgressHUD.h"
 //#import "UIImageView+WebCache.h"
 #import "VRShowNavView.h"

@@ -11,6 +11,7 @@
 #import "IndexApiManager.h"
 #import "HomeCollectionViewCell.h"
 #import "CarouselReformer.h"
+#import "PlayListViewController.h"
 
 @interface HomePageViewController ()<KBAPIManagerApiCallBackDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -20,10 +21,12 @@
 
 @property(nonatomic,strong)IndexApiManager *indexManager;
 
-@property(nonatomic,strong)id<KBAPIManagerCallbackDataReformer> carselReformer;
-@property(nonatomic,strong)id<KBAPIManagerCallbackDataReformer> indexReformer;
+@property(nonatomic,strong)CarouselReformer *carselReformer;
+@property(nonatomic,strong)IndexReformer *indexReformer;
 
 @property(nonatomic,strong)NSDictionary *indexDictionary;
+
+@property(nonatomic,strong)UIButton *testButton;
 
 
 @end
@@ -35,11 +38,13 @@
     // Do any additional setup after loading the view.
     
     [self.view addSubview:self.navView];
-    [self.view addSubview:self.collectionView];
+//    [self.view addSubview:self.collectionView];
+    
+    [self.view addSubview:self.testButton];
     
     [self layoutSubPages];
     
-    [self.indexManager loadData];
+//    [self.indexManager loadData];
     
 }
 
@@ -54,9 +59,6 @@
         make.top.equalTo(_navView.mas_bottom);
         make.height.equalTo([NSNumber numberWithFloat:kScreenHeight-64-49]);
     }];
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,7 +73,9 @@
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeCollectionViewCell" forIndexPath:indexPath];
-    [cell configWithData:self.indexDictionary[kPropertyFocusImgList]];
+    if (self.indexDictionary) {
+        [cell configWithData:self.indexDictionary[kPropertyFocusImgList]];
+    }
     return cell;
 }
 
@@ -93,6 +97,12 @@
             [self.noDataView show];
         }
     }
+}
+
+#pragma mark - button actions
+-(void)testButtonPressed{
+    PlayListViewController *vc = [[PlayListViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - setters and getters
@@ -136,5 +146,29 @@
     return _collectionView;
 }
 
+-(CarouselReformer *)carselReformer{
+    if (_carselReformer == nil) {
+        _carselReformer = [[CarouselReformer alloc] init];
+    }
+    return _carselReformer;
+}
+
+-(IndexReformer *)indexReformer{
+    if (_indexReformer == nil) {
+        _indexReformer = [[IndexReformer alloc] init];
+    }
+    return _indexReformer;
+}
+
+-(UIButton *)testButton{
+    if (_testButton == nil) {
+        _testButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_testButton setTitle:@"test" forState:UIControlStateNormal];
+        _testButton.frame = CGRectMake(0, 0, 100, 100);
+        _testButton.center = self.view.center;
+        [_testButton addTarget:self action:@selector(testButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _testButton;
+}
 
 @end

@@ -70,4 +70,6 @@ typedef NS_ENUM (NSUInteger, KBAPIManagerErrorType){
 
 -(NSInteger)loadData;
 
+- (void)cancelAllRequests;
+
 @end

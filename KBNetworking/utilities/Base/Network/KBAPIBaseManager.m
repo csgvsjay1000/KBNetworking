@@ -43,6 +43,12 @@
     return resultData;
 }
 
+- (void)cancelAllRequests
+{
+    [[KBApiProxy sharedInstance] cancelRequestWithRequestIDList:self.requestIdList];
+    [self.requestIdList removeAllObjects];
+}
+
 
 #pragma mark calling api
 -(NSInteger)loadData{

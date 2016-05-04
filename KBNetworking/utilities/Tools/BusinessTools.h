@@ -17,4 +17,17 @@
  */
 +(UIView *)loadXibToViewWithName:(NSString *)name;
 
+/**
+ *  公钥加密
+ */
++(NSString *)encryptWithPublicKey:(NSString *)str;
+
+/**
+ *  公钥解密
+ */
++(NSString *)decryptWithPublicKey:(NSString *)str;
+
+// 将字典转换成json字符串
++ (NSString*)dictionaryToJson:(NSDictionary *)dic;
+
 @end

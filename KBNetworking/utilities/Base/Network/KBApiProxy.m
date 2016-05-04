@@ -9,6 +9,9 @@
 #import "KBApiProxy.h"
 #import "AFNetworking.h"
 #import "KBNetworkingConfiguration.h"
+#import "BusinessTools.h"
+#import "KBNetAppContext.h"
+#import "NSString+THLibraries.h"
 
 @interface KBApiProxy ()
 
@@ -47,11 +50,30 @@
     [self.dispatchTable removeObjectForKey:requestID];
 }
 
+- (void)cancelRequestWithRequestIDList:(NSArray *)requestIDList
+{
+    for (NSNumber *requestId in requestIDList) {
+        [self cancelRequestWithRequestID:requestId];
+    }
+}
+
 #pragma mark - private methods
 
 - (NSURLRequest *)generateGETRequestWithParams:(NSDictionary *)requestParams methodName:(NSString *)methodName{
     NSString *urlString = [NSString stringWithFormat:@"%@%@",KBApiBaseUrl,methodName];
-    NSURLRequest *request = [self.httpRequestSerializer requestWithMethod:@"POST" URLString:urlString parameters:requestParams error:NULL];
+    
+    NSString *dataString = [BusinessTools dictionaryToJson:requestParams];
+    NSString *md5String = [dataString stringByAppendingString:[KBNetAppContext sharedInstance].MD5_Key];
+    NSString *authString = [md5String MD5String];
+    NSDictionary *paramsDic = [NSDictionary dictionaryWithObjectsAndKeys:
+                               @"-1", @"ipAddr",
+                               @"2", @"clientType",
+                               @"1.0", @"version",
+                               authString, @"authorization",
+                               dataString, @"jsonData",
+                               [KBNetAppContext sharedInstance].identificationCode,@"identificationCode",
+                               nil];
+    NSURLRequest *request = [self.httpRequestSerializer requestWithMethod:@"POST" URLString:urlString parameters:paramsDic error:NULL];
     return request;
     
 }

@@ -8,6 +8,15 @@
 
 #import "KBNetAppContext.h"
 #import "AFNetworking.h"
+#import "KeychainItemWrapper.h"
+#import "Constants.h"
+#import "BusinessTools.h"
+
+@interface KBNetAppContext (){
+    NSString *_identificationCode;
+}
+
+@end
 
 @implementation KBNetAppContext
 
@@ -28,6 +37,37 @@
         [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     });
     return sharedInstance;
+}
+
+-(NSString *)ipAddr{
+    return @"-1";
+}
+
+-(NSString *)clientType{
+    return @"2";
+}
+
+-(NSString *)version{
+    return @"1.0";
+}
+
+-(NSString *)MD5_Key{
+    return @"92A864886F70D010101050101010500048202613082025D02010002818";
+}
+
+-(NSString *)identificationCode{
+    if (_identificationCode == nil) {
+        KeychainItemWrapper *wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:@"VRShow" accessGroup:nil];
+        NSString *_identifier = [wrapper objectForKey:(id)kSecValueData];
+        if (NULL_STR(_identifier)) {
+            _identifier  = [[UIDevice currentDevice].identifierForVendor UUIDString];
+            _identifier = [_identifier stringByAppendingString:@"_iOS"];
+            _identifier = [BusinessTools encryptWithPublicKey:_identifier];
+            [wrapper setObject:_identifier forKey:(id)kSecValueData];
+        }
+        _identificationCode = _identifier;
+    }
+    return _identificationCode;
 }
 
 @end

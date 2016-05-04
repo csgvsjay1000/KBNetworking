@@ -12,6 +12,11 @@
 
 @property(nonatomic,readonly)BOOL isReachable;
 
+@property(nonatomic,readonly)NSString *ipAddr;
+@property(nonatomic,readonly)NSString *clientType;
+@property(nonatomic,readonly)NSString *version;
+@property(nonatomic,readonly)NSString *MD5_Key;
+@property(nonatomic,readonly)NSString *identificationCode;
 
 
 + (instancetype)sharedInstance;
