@@ -1,0 +1,47 @@
+//
+//  VRShowStringKeyDefineHeader.pch
+//  KBNetworking
+//
+//  Created by chengshenggen on 6/2/16.
+//  Copyright © 2016 Gan Tian. All rights reserved.
+//
+
+#ifndef VRShowStringKeyDefineHeader_pch
+#define VRShowStringKeyDefineHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+/**
+ *  服务器地址
+ */
+//测试环境
+//#define Domain @"http://192.168.200.148:8080/VR_Service/api/"
+
+//正式环境
+#define Domain @"http://120.76.79.49:38080/VR_Service/api/"
+
+// 公钥key
+#define kRSAPublicKey @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDQ9mIWe63OiIDRh9invj8PL+xQoKIcn3zlu08GCqBzCwPxcMzSfDgzPrW22VCax30sqZnycMMWXesCZLHMW7gJYyVjfGo5/dsE0rKFJ7lExJfUNOBC7fkAzoz07qpkgDHHSKc11edT7cxCh/UrEEzjeQ4/6enixYzDoWfA8upL1QIDAQAB"
+
+//友盟key
+#define KUMSocialShareKey @"56da594a67e58ecaf50007f5"
+
+
+/*********************存储在userdefault里的数据**********************/
+
+//用户id
+#define KUserID @"userID"
+
+
+/*********************end**********************/
+
+
+//屏幕宽度和高度
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define ISIPhone5s ([UIScreen mainScreen].bounds.size.width == 320)
+#define KCSGSCALE6S_DEFINE ([UIScreen mainScreen].bounds.size.width/375)
+
+#endif /* VRShowStringKeyDefineHeader_pch */

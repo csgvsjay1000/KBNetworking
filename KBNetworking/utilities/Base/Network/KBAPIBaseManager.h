@@ -66,6 +66,10 @@ typedef NS_ENUM (NSUInteger, KBAPIManagerErrorType){
 
 @property (nonatomic, readonly) KBAPIManagerErrorType errorType;
 
+@property (nonatomic, assign) BOOL isLoading;  //是否正在加载
+
+
+
 - (id)fetchDataWithReformer:(id<KBAPIManagerCallbackDataReformer>)reformer;
 
 -(NSInteger)loadData;

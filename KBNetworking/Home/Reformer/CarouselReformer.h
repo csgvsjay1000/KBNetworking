@@ -17,3 +17,11 @@
 @interface CarouselReformer : NSObject<KBAPIManagerCallbackDataReformer>
 
 @end
+
+@interface ThridTagReformer : NSObject<KBAPIManagerCallbackDataReformer>
+
+@end
+
+@interface IndexVideoTagReform : NSObject<KBAPIManagerCallbackDataReformer>
+
+@end

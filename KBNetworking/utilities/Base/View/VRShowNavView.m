@@ -130,13 +130,18 @@
     }];
 }
 
--(void)show{
-    self.hidden = NO;
-    
+-(void)showInView:(UIView *)inView{
+    [self removeFromSuperview];
+    [inView addSubview:self];
+    [inView bringSubviewToFront:self];
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.centerY.equalTo(inView);
+        make.size.mas_equalTo(CGSizeMake(200, 200));
+    }];
 }
 
 -(void)hide{
-    self.hidden = YES;
+    [self removeFromSuperview];
 }
 
 #pragma mark - setters and getters
@@ -160,3 +165,197 @@
 }
 
 @end
+
+@interface VRWaitingView ()
+
+@property(nonatomic,strong)UIImageView *animImageView;  //跑动小人View
+@property(nonatomic,strong)NSMutableArray *imageArray;
+
+@end
+
+@implementation VRWaitingView
+
+-(id)initWithFrame:(CGRect)frame{
+    CGRect tm = CGRectMake(0, 0, 250, 250);
+    self = [super initWithFrame:tm];
+    if (self) {
+        
+        [self addSubview:self.animImageView];
+        self.animImageView.animationImages = self.imageArray;
+        [self layoutSubPages];
+    }
+    return self;
+}
+
+-(void)layoutSubPages{
+    
+    [_animImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(250, 250));
+        make.center.equalTo(self);
+    }];
+    
+}
+
+-(void)showInView:(UIView *)inView{
+    [self removeFromSuperview];
+    [inView addSubview:self];
+    [inView bringSubviewToFront:self];
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.centerY.equalTo(inView);
+        make.size.mas_equalTo(CGSizeMake(250, 250));
+    }];
+    [self.animImageView startAnimating];
+
+}
+
+-(void)hide{
+    [self.animImageView stopAnimating];
+    [self removeFromSuperview];
+}
+
+#pragma mark - setters and getters
+-(UIImageView *)animImageView{
+    if (_animImageView == nil) {
+        _animImageView = [[UIImageView alloc]init];
+        _animImageView.animationDuration = 0.5;
+        _animImageView.userInteractionEnabled = YES;
+        _animImageView.frame = CGRectMake(0, 0, 250, 250);
+        _animImageView.center = self.center;
+        _animImageView.image = [UIImage imageNamed:@"waiting_01"];
+    }
+    return _animImageView;
+}
+
+-(NSMutableArray *)imageArray{
+    if (_imageArray == nil) {
+        _imageArray = [[NSMutableArray alloc]init];
+        [_imageArray addObject:[UIImage imageNamed:@"waiting_01"]];
+        [_imageArray addObject:[UIImage imageNamed:@"waiting_02"]];
+        [_imageArray addObject:[UIImage imageNamed:@"waiting_03"]];
+        [_imageArray addObject:[UIImage imageNamed:@"waiting_04"]];
+        
+    }
+    return _imageArray;
+}
+
+@end
+
+@interface VRFailLoadingView ()
+
+@property(nonatomic,strong)UIView *middleView;
+@property(nonatomic,strong)UIImageView *imageView;
+@property(nonatomic,strong)UILabel *msgLabel;
+@property(nonatomic,strong)UIButton *button;
+
+@property(nonatomic,copy)VRSHowButtonPressedBlock reloadBlock;
+
+@end
+
+@implementation VRFailLoadingView
+
+-(id)initWithFrame:(CGRect)frame{
+    CGRect tm = CGRectMake(0, 0, 250, 300);
+    
+    self = [super initWithFrame:tm];
+    if (self) {
+        [self addSubview:self.middleView];
+        [self.middleView addSubview:self.imageView];
+        [self.middleView addSubview:self.msgLabel];
+        [self.middleView addSubview:self.button];
+
+        [self layoutSubPages];
+    }
+    return self;
+}
+
+-(void)layoutSubPages{
+    
+    [_middleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.right.bottom.left.equalTo(self);
+    }];
+    [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(123, 136));
+        make.centerX.equalTo(self);
+        make.top.equalTo(self);
+    }];
+    [_msgLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self);
+        make.top.equalTo(_imageView.mas_bottom).offset(5);
+    }];
+    [_button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self);
+        make.size.mas_equalTo(CGSizeMake(90, 30));
+        make.top.equalTo(_msgLabel.mas_bottom).offset(10);
+    }];
+}
+
+-(void)showInView:(UIView *)inView reloadBlock:(VRSHowButtonPressedBlock)reloadBlock{
+    [self removeFromSuperview];
+    [inView addSubview:self];
+    [inView bringSubviewToFront:self];
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.centerY.equalTo(inView);
+        make.size.mas_equalTo(CGSizeMake(250, 250));
+    }];
+    _reloadBlock = reloadBlock;
+}
+
+-(void)hide{
+    [self removeFromSuperview];
+}
+
+-(void)buttonPressed{
+    if (_reloadBlock) {
+        [self hide];
+        _reloadBlock(self);
+    }
+}
+
+#pragma mark - setters and getters
+-(UIView *)middleView{
+    if (_middleView == nil) {
+        _middleView = [[UIView alloc] init];
+    }
+    return _middleView;
+}
+
+-(UIImageView *)imageView{
+    if (_imageView == nil) {
+        _imageView = [[UIImageView alloc]init];
+        _imageView.image = [UIImage imageNamed:@"global_fail_load"];
+    }
+    return _imageView;
+}
+
+-(UILabel *)msgLabel{
+    if (_msgLabel == nil) {
+        _msgLabel = [[UILabel alloc]init];
+        _msgLabel.textColor = [UIColor blackColor];
+        _msgLabel.font = [UIFont systemFontOfSize:15.0];
+        _msgLabel.textAlignment = NSTextAlignmentCenter;
+        _msgLabel.text = @"非常抱歉,页面加载失败";
+    }
+    return _msgLabel;
+}
+
+
+-(UIButton *)button{
+    if (_button == nil) {
+        UIImage *backImage = [UIImage imageNamed:@"global_fail_button_bg"];
+        _button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_button setBackgroundImage:backImage forState:UIControlStateNormal];
+        //返回按钮为第一响应者
+        [_button addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventTouchUpInside];
+        [_button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _button.titleLabel.font = [UIFont systemFontOfSize:15.0];
+        [_button setTitle:@"重新加载" forState:UIControlStateNormal];
+    }
+    return _button;
+}
+
+
+@end
+
+
+
+

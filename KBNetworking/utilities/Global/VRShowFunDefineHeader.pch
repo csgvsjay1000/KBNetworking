@@ -1,0 +1,50 @@
+//
+//  VRShowFunDefineHeader.pch
+//  KBNetworking
+//
+//  Created by chengshenggen on 6/2/16.
+//  Copyright © 2016 Gan Tian. All rights reserved.
+//
+
+#ifndef VRShowFunDefineHeader_pch
+#define VRShowFunDefineHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//NSUserDefaults存取
+#define UserDefaultSet(object,key) [[NSUserDefaults standardUserDefaults] setObject:object forKey:key]; \
+[[NSUserDefaults standardUserDefaults] synchronize]
+
+#define UserDefaultGet(object,key) NSString *object = [[NSUserDefaults standardUserDefaults] objectForKey:key]
+
+#define UserDefaultRemove(key)  [[NSUserDefaults standardUserDefaults] removeObjectForKey:key]
+
+//十六进制颜色转换
+#define UIColorFromRGB(rgbValue) UIColorFromRGBA(rgbValue, 1.0)
+
+#define UIColorFromRGBA(rgbValue, alphaValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphaValue]
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+
+//日志预定义，非定义DEBUG后，日志不再打印。
+#ifdef DEBUG
+#define NSLog(fmt, ...) {NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);}
+#else
+#define NSLog(...)
+#endif
+
+//判断空字符串
+#define NULL_STR(str) (str == nil || (NSNull *)str == [NSNull null] || str.length == 0)
+
+//提示框
+#define Alert(msg) [[[UIAlertView alloc] initWithTitle:@"提示" message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show]
+
+//压缩图片
+#define Compress(imageString, imageWidth) [[NSString stringWithFormat:@"%@?imageView2/2/w/%ld",imageString, (NSInteger)imageWidth + 100]utf8StringEncoding];
+
+// block defines
+typedef void(^VRSHowButtonPressedBlock)(id);
+
+#endif /* VRShowFunDefineHeader_pch */

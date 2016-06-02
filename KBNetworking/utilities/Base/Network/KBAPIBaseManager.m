@@ -55,7 +55,7 @@
     
     NSDictionary *params = [self.paramSource paramsForApi:self];
     NSInteger requestId = [self loadDataWithParams:params];
-    
+    _isLoading = YES;
     return requestId;
 }
 
@@ -67,7 +67,7 @@
         requestId = [[KBApiProxy sharedInstance]callPOSTWithParams:params methodName:self.child.methodName success:^(KBURLResponse *response) {
             [self successedOnCallingAPI:response];
         } fail:^(KBURLResponse *response) {
-            [self failedOnCallingAPI:response withErrorType:KBAPIManagerErrorTypeDefault];
+            [self failedOnCallingAPI:response withErrorType:KBAPIManagerErrorTypeTimeout];
         }];
         [self.requestIdList addObject:@(requestId)];
         
@@ -88,11 +88,14 @@
     }
     [self removeRequestIdWithRequestID:response.requestId];
     [self.delegate managerCallAPIDidSuccess:self];
+    _isLoading = NO;
 }
 
 - (void)failedOnCallingAPI:(KBURLResponse *)response withErrorType:(KBAPIManagerErrorType)errorType{
     self.errorType = errorType;
     [self.delegate managerCallAPIDidFailed:self];
+    _isLoading = NO;
+
 }
 
 #pragma mark - private methods

@@ -29,7 +29,23 @@
 
 @interface VRNoDataView : UIView
 
--(void)show;
+-(void)showInView:(UIView *)inView;
+
+-(void)hide;
+
+@end
+
+@interface VRWaitingView : UIView
+
+-(void)showInView:(UIView *)inView;
+
+-(void)hide;
+
+@end
+
+@interface VRFailLoadingView : UIView
+
+-(void)showInView:(UIView *)inView reloadBlock:(VRSHowButtonPressedBlock)reloadBlock;
 
 -(void)hide;
 
