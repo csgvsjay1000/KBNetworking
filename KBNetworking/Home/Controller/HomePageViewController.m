@@ -86,7 +86,8 @@
         //顶部轮播图 + 第三方平台
         return 1;
     }else {
-        return [self.indexArray[section][kPropertyVideoList] count];
+        NSDictionary *dic = self.indexArray[section][kPropertyVideoList];
+        return [dic[@"resourcesList"] count];
     }
 }
 
@@ -104,6 +105,12 @@
         return cell;
     }
     HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeCollectionViewCell" forIndexPath:indexPath];
+    
+    NSDictionary *dic = self.indexArray[indexPath.section][kPropertyVideoList];
+    if (dic) {
+        [cell configWithData:dic[@"resourcesList"][indexPath.row]];
+    }
+    
     return cell;
     
 }
@@ -125,8 +132,19 @@
     if (indexPath.section == 0) {
         return CGSizeMake(self.view.frame.size.width, self.kBannerHight);
     }else{
-        return CGSizeMake((kScreenWidth - 55.0) / 2, 42.5+((kScreenWidth - 55.0) / 2)*9/16);
+        //图片按比例设置
+        CGFloat imageWidth = (kScreenWidth - 55.0) / 2;
+        return CGSizeMake(imageWidth, 42.5 + imageWidth * 9/16);
     }
+}
+
+//设置每个item的UIEdgeInsets
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    if (section == 0) {
+        return UIEdgeInsetsMake(0, 0, 0, 0);
+    }
+    return UIEdgeInsetsMake(5.0, 20, 5.0, 20.0);
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
@@ -136,12 +154,24 @@
     return CGSizeMake(kScreenWidth, 43);
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
-    if (section == 0) {
-        return CGSizeZero;
-    }
-    return CGSizeMake(kScreenWidth, 40);
+    return CGSizeZero;
 }
 
+//点击item方法
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSDictionary *dic = self.indexArray[indexPath.section][kPropertyVideoList];
+    if (dic) {
+        NSDictionary *oneDic = dic[@"resourcesList"][indexPath.row];
+        PlayListViewController *vc = [[PlayListViewController alloc] init];
+        vc.resourceID = [oneDic objectForKey:@"resourceId"];
+        
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
+    
+}
 
 #pragma mark - KBAPIManagerApiCallBackDelegate
 - (void)managerCallAPIDidSuccess:(KBAPIBaseManager *)manager{
@@ -183,8 +213,7 @@
 #pragma mark - HomeCollectionHeaderViewCellDelegate
 //轮播图点击
 -(void)focusImageClick:(NSDictionary *)data{
-    PlayListViewController *vc = [[PlayListViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 #pragma mark - headerRereshing
@@ -235,7 +264,7 @@
         [_collectionView registerClass:[HomeCollectionHeaderViewCell class] forCellWithReuseIdentifier:@"HomeCollectionHeaderViewCell"];
         //注册视频列表head标签view
         [_collectionView registerClass:[HomeCollectionHeadReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HomeCollectionHeadReusableView"];
-        //注册视频列表foot更多按钮view
+//        //注册视频列表foot更多按钮view
         [_collectionView registerClass:[HomeCollectionFootReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"HomeCollectionFootReusableView"];
         
 //        //下拉刷新(进入刷新状态就会调用self的headerRereshing)

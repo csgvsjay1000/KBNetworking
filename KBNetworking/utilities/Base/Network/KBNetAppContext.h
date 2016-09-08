@@ -17,6 +17,7 @@
 @property(nonatomic,readonly)NSString *version;
 @property(nonatomic,readonly)NSString *MD5_Key;
 @property(nonatomic,readonly)NSString *identificationCode;
+@property(nonatomic,readonly)NSString *encryUserID;  //加密后的userid
 
 
 + (instancetype)sharedInstance;

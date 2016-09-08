@@ -14,6 +14,8 @@
 
 @interface KBNetAppContext (){
     NSString *_identificationCode;
+    NSString *_encryUserID;
+
 }
 
 @end
@@ -68,6 +70,17 @@
         _identificationCode = _identifier;
     }
     return _identificationCode;
+}
+
+-(NSString *)encryUserID{
+    if (_encryUserID == nil) {
+        UserDefaultGet(userId, KUserID);
+        if (NULL_STR(userId)) {
+            userId = @"-1";
+        }
+        _encryUserID = [BusinessTools encryptWithPublicKey:userId];
+    }
+    return _encryUserID;
 }
 
 @end

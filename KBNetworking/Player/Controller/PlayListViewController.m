@@ -8,12 +8,16 @@
 
 #import "PlayListViewController.h"
 #import "Constants.h"
-#import "ResourcesDetailApiManager.h"
+#import "ResourcesNewUrlManager.h"
+#import "PlayerControlView1_0.h"
+#import "KBEAGLView.h"
 
 @interface PlayListViewController ()<KBAPIManagerApiCallBackDelegate,UIGestureRecognizerDelegate>
-@property(nonatomic,strong)VRShowNavView *navView;
 
 @property(nonatomic,strong)ResourcesDetailApiManager *detailManager;
+@property(nonatomic,strong)PlayerControlView1_0 *controlView;
+@property(nonatomic,strong)KBEAGLView *normalGLView;
+
 
 @end
 
@@ -24,23 +28,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-//    self.navigationController.interactivePopGestureRecognizer.delegate = self;
-    [self.view addSubview:self.navView];
-    
+    [self.view addSubview:self.controlView];
+    [self.view insertSubview:self.normalGLView belowSubview:self.controlView];
     
     [self layoutSubPages];
     
-    [self.detailManager loadData];
-    
+    [_normalGLView wait:YES];
 }
 
 
 - (void)layoutSubPages {
-    
-    [_navView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.width.equalTo(self.view);
-        make.height.equalTo(@64);
+    [_controlView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.equalTo(self.view);
+        make.height.equalTo(@210);
     }];
+    
+    [_normalGLView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.top.equalTo(_controlView);
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,27 +81,25 @@
 
 
 #pragma mark - setters and getters
-- (VRShowNavView *)navView {
-    if (_navView == nil) {
-        _navView = [[VRShowNavView alloc] init];
-        _navView.leftTitleLabel.text = @"详情";
-        _navView.leftTitleLabel.hidden = NO;
-        _navView.titleLabel.hidden = YES;
-        _navView.navLeftButton.hidden = NO;
-        WS(weakSelf)
-        _navView.navLeftButtonBlock = ^(id sender){
+- (PlayerControlView1_0 *)controlView
+{
+    if (_controlView == nil) {
+        _controlView = [[PlayerControlView1_0 alloc] init];
+        WS(weakSelf);
+        _controlView.navView.navLeftButtonBlock = ^(id sender){
             [weakSelf back];
         };
+        _controlView.navView.navLeftButton.hidden = NO;
+        
     }
-    return _navView;
+    return _controlView;
 }
 
--(ResourcesDetailApiManager *)detailManager{
-    if (_detailManager == nil) {
-        _detailManager = [[ResourcesDetailApiManager alloc] init];
-        _detailManager.delegate = self;
+-(KBEAGLView *)normalGLView{
+    if (_normalGLView == nil) {
+        _normalGLView = [[KBEAGLView alloc] initWithFrame:CGRectZero];
     }
-    return _detailManager;
+    return _normalGLView;
 }
 
 @end

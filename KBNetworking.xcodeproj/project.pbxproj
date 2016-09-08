@@ -15,7 +15,6 @@
 		4C2ECF891CD9D695001AAAEA /* NSString+THLibraries.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2ECF881CD9D695001AAAEA /* NSString+THLibraries.m */; };
 		4C2ECF8E1CD9D6F6001AAAEA /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2ECF8C1CD9D6F6001AAAEA /* GTMBase64.m */; };
 		4C2ECF941CD9DCB5001AAAEA /* PlayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2ECF931CD9DCB5001AAAEA /* PlayListViewController.m */; };
-		4C2ECF981CD9DF7D001AAAEA /* ResourcesDetailApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2ECF971CD9DF7D001AAAEA /* ResourcesDetailApiManager.m */; };
 		4C57415B1CD8ADF0005C31E1 /* CarouselReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C57415A1CD8ADF0005C31E1 /* CarouselReformer.m */; };
 		4C5DD7001D00246700FE421F /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DD6E01D00246700FE421F /* MKAnnotationView+WebCache.m */; };
 		4C5DD7011D00246700FE421F /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DD6E21D00246700FE421F /* NSData+ImageContentType.m */; };
@@ -52,6 +51,14 @@
 		4C5DD7661D00387600FE421F /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DD7511D00387600FE421F /* UIScrollView+MJExtension.m */; };
 		4C5DD7671D00387600FE421F /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DD7531D00387600FE421F /* UIScrollView+MJRefresh.m */; };
 		4C5DD7681D00387600FE421F /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DD7551D00387600FE421F /* UIView+MJExtension.m */; };
+		4C695F3A1D8162F100049AB7 /* PlayerControlView1_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C695F391D8162F100049AB7 /* PlayerControlView1_0.m */; };
+		4C695F3D1D8165B700049AB7 /* KBEAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C695F3C1D8165B700049AB7 /* KBEAGLView.m */; };
+		4C695F481D81663400049AB7 /* GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C695F411D81663400049AB7 /* GLProgram.m */; };
+		4C695F4A1D81663400049AB7 /* PanormalShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 4C695F441D81663400049AB7 /* PanormalShader.fsh */; };
+		4C695F4B1D81663400049AB7 /* PanormalShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 4C695F451D81663400049AB7 /* PanormalShader.vsh */; };
+		4C695F4C1D81663400049AB7 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 4C695F461D81663400049AB7 /* Shader.fsh */; };
+		4C695F4D1D81663400049AB7 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 4C695F471D81663400049AB7 /* Shader.vsh */; };
+		4C695F501D8169AC00049AB7 /* ResourcesNewUrlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C695F4F1D8169AC00049AB7 /* ResourcesNewUrlManager.m */; };
 		4C799F841CD309F900D7C74C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C799F831CD309F900D7C74C /* main.m */; };
 		4C799F871CD309F900D7C74C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C799F861CD309F900D7C74C /* AppDelegate.m */; };
 		4C799F8A1CD309F900D7C74C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C799F891CD309F900D7C74C /* ViewController.m */; };
@@ -203,8 +210,6 @@
 		4C2ECF8D1CD9D6F6001AAAEA /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		4C2ECF921CD9DCB5001AAAEA /* PlayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayListViewController.h; sourceTree = "<group>"; };
 		4C2ECF931CD9DCB5001AAAEA /* PlayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayListViewController.m; sourceTree = "<group>"; };
-		4C2ECF961CD9DF7D001AAAEA /* ResourcesDetailApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourcesDetailApiManager.h; sourceTree = "<group>"; };
-		4C2ECF971CD9DF7D001AAAEA /* ResourcesDetailApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourcesDetailApiManager.m; sourceTree = "<group>"; };
 		4C5741591CD8ADF0005C31E1 /* CarouselReformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselReformer.h; sourceTree = "<group>"; };
 		4C57415A1CD8ADF0005C31E1 /* CarouselReformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselReformer.m; sourceTree = "<group>"; };
 		4C57415D1CD8B1CB005C31E1 /* CarouselReformerKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselReformerKeys.h; sourceTree = "<group>"; };
@@ -279,6 +284,19 @@
 		4C5DD7531D00387600FE421F /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		4C5DD7541D00387600FE421F /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		4C5DD7551D00387600FE421F /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		4C695F381D8162F100049AB7 /* PlayerControlView1_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerControlView1_0.h; sourceTree = "<group>"; };
+		4C695F391D8162F100049AB7 /* PlayerControlView1_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerControlView1_0.m; sourceTree = "<group>"; };
+		4C695F3B1D8165B700049AB7 /* KBEAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBEAGLView.h; sourceTree = "<group>"; };
+		4C695F3C1D8165B700049AB7 /* KBEAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBEAGLView.m; sourceTree = "<group>"; };
+		4C695F3E1D8165F400049AB7 /* VREnumDefHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VREnumDefHeader.h; sourceTree = "<group>"; };
+		4C695F401D81663400049AB7 /* GLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLProgram.h; sourceTree = "<group>"; };
+		4C695F411D81663400049AB7 /* GLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLProgram.m; sourceTree = "<group>"; };
+		4C695F441D81663400049AB7 /* PanormalShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = PanormalShader.fsh; sourceTree = "<group>"; };
+		4C695F451D81663400049AB7 /* PanormalShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = PanormalShader.vsh; sourceTree = "<group>"; };
+		4C695F461D81663400049AB7 /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		4C695F471D81663400049AB7 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
+		4C695F4E1D8169AC00049AB7 /* ResourcesNewUrlManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourcesNewUrlManager.h; sourceTree = "<group>"; };
+		4C695F4F1D8169AC00049AB7 /* ResourcesNewUrlManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourcesNewUrlManager.m; sourceTree = "<group>"; };
 		4C6D3B4F1CFFE58400B0D120 /* VRShowFunDefineHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VRShowFunDefineHeader.pch; sourceTree = "<group>"; };
 		4C6D3B501CFFE5C700B0D120 /* VRShowStringKeyDefineHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VRShowStringKeyDefineHeader.pch; sourceTree = "<group>"; };
 		4C799F7F1CD309F900D7C74C /* KBNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KBNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -549,9 +567,9 @@
 		4C2ECF8F1CD9DC96001AAAEA /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				4C695F371D8162CB00049AB7 /* View */,
 				4C2ECF951CD9DEF2001AAAEA /* Manager */,
 				4C2ECF901CD9DC96001AAAEA /* Controller */,
-				4C2ECF911CD9DC96001AAAEA /* View */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -565,18 +583,11 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		4C2ECF911CD9DC96001AAAEA /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		4C2ECF951CD9DEF2001AAAEA /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				4C2ECF961CD9DF7D001AAAEA /* ResourcesDetailApiManager.h */,
-				4C2ECF971CD9DF7D001AAAEA /* ResourcesDetailApiManager.m */,
+				4C695F4E1D8169AC00049AB7 /* ResourcesNewUrlManager.h */,
+				4C695F4F1D8169AC00049AB7 /* ResourcesNewUrlManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -714,6 +725,30 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		4C695F371D8162CB00049AB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C695F381D8162F100049AB7 /* PlayerControlView1_0.h */,
+				4C695F391D8162F100049AB7 /* PlayerControlView1_0.m */,
+				4C695F3B1D8165B700049AB7 /* KBEAGLView.h */,
+				4C695F3C1D8165B700049AB7 /* KBEAGLView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C695F3F1D81663400049AB7 /* opengl */ = {
+			isa = PBXGroup;
+			children = (
+				4C695F401D81663400049AB7 /* GLProgram.h */,
+				4C695F411D81663400049AB7 /* GLProgram.m */,
+				4C695F441D81663400049AB7 /* PanormalShader.fsh */,
+				4C695F451D81663400049AB7 /* PanormalShader.vsh */,
+				4C695F461D81663400049AB7 /* Shader.fsh */,
+				4C695F471D81663400049AB7 /* Shader.vsh */,
+			);
+			path = opengl;
+			sourceTree = "<group>";
+		};
 		4C799F761CD309F900D7C74C = {
 			isa = PBXGroup;
 			children = (
@@ -786,6 +821,7 @@
 		4C799FB51CD30D1300D7C74C /* libraries */ = {
 			isa = PBXGroup;
 			children = (
+				4C695F3F1D81663400049AB7 /* opengl */,
 				4C5DD7291D00387600FE421F /* MJRefresh */,
 				4C5DD6DE1D00246700FE421F /* SDWebImage */,
 				4C2ECF8A1CD9D6F6001AAAEA /* GTMBase64 */,
@@ -870,6 +906,7 @@
 				4C79A0061CD30FCA00D7C74C /* Constants.h */,
 				4C6D3B4F1CFFE58400B0D120 /* VRShowFunDefineHeader.pch */,
 				4C6D3B501CFFE5C700B0D120 /* VRShowStringKeyDefineHeader.pch */,
+				4C695F3E1D8165F400049AB7 /* VREnumDefHeader.h */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -1160,8 +1197,12 @@
 			files = (
 				4C2ECF831CD9D475001AAAEA /* LICENSE in Resources */,
 				4C799F921CD309FB00D7C74C /* LaunchScreen.storyboard in Resources */,
+				4C695F4A1D81663400049AB7 /* PanormalShader.fsh in Resources */,
 				4C5DD7641D00387600FE421F /* MJRefresh.bundle in Resources */,
+				4C695F4C1D81663400049AB7 /* Shader.fsh in Resources */,
+				4C695F4B1D81663400049AB7 /* PanormalShader.vsh in Resources */,
 				4C799F8F1CD309FB00D7C74C /* Assets.xcassets in Resources */,
+				4C695F4D1D81663400049AB7 /* Shader.vsh in Resources */,
 				4C79A02D1CD3122600D7C74C /* VRShowItemView.xib in Resources */,
 				4C79A04E1CD3265700D7C74C /* Info.plist in Resources */,
 				4C799F8D1CD309FA00D7C74C /* Main.storyboard in Resources */,
@@ -1232,7 +1273,9 @@
 				4C5DD7661D00387600FE421F /* UIScrollView+MJExtension.m in Sources */,
 				4C5DD7611D00387600FE421F /* MJRefreshGifHeader.m in Sources */,
 				4C79A0601CD3413600D7C74C /* IndexApiManager.m in Sources */,
+				4C695F501D8169AC00049AB7 /* ResourcesNewUrlManager.m in Sources */,
 				4C79A0321CD324BF00D7C74C /* BusinessTools.m in Sources */,
+				4C695F481D81663400049AB7 /* GLProgram.m in Sources */,
 				4C5DD70C1D00246800FE421F /* UIImage+WebP.m in Sources */,
 				4C79A0541CD3265700D7C74C /* MASViewConstraint.m in Sources */,
 				4C2ECF941CD9DCB5001AAAEA /* PlayListViewController.m in Sources */,
@@ -1244,6 +1287,7 @@
 				4C5DD7631D00387600FE421F /* MJRefreshStateHeader.m in Sources */,
 				4C2ECF8E1CD9D6F6001AAAEA /* GTMBase64.m in Sources */,
 				4C5DD75E1D00387600FE421F /* MJRefreshBackGifFooter.m in Sources */,
+				4C695F3A1D8162F100049AB7 /* PlayerControlView1_0.m in Sources */,
 				4C799F841CD309F900D7C74C /* main.m in Sources */,
 				4C57415B1CD8ADF0005C31E1 /* CarouselReformer.m in Sources */,
 				4C5DD7651D00387600FE421F /* MJRefreshConst.m in Sources */,
@@ -1256,8 +1300,8 @@
 				4C5DD7051D00246700FE421F /* SDWebImageDownloader.m in Sources */,
 				4C5DD75F1D00387600FE421F /* MJRefreshBackNormalFooter.m in Sources */,
 				4C5DD75B1D00387600FE421F /* MJRefreshAutoGifFooter.m in Sources */,
-				4C2ECF981CD9DF7D001AAAEA /* ResourcesDetailApiManager.m in Sources */,
 				4C799FED1CD30D1300D7C74C /* AFURLRequestSerialization.m in Sources */,
+				4C695F3D1D8165B700049AB7 /* KBEAGLView.m in Sources */,
 				4C79A0241CD311C600D7C74C /* VRShowNavController.m in Sources */,
 				4C79A0581CD3265700D7C74C /* ViewController+MASAdditions.m in Sources */,
 				4C799FEE1CD30D1300D7C74C /* AFURLResponseSerialization.m in Sources */,

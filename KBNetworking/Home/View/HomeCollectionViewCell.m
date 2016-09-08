@@ -12,19 +12,74 @@
 
 #pragma mark - 视频列表item view cell
 
+@interface HomeCollectionViewCell ()
+
+@property(nonatomic,strong)UIImageView *imageView;
+@property(nonatomic,strong)UILabel *titleLabel;
+
+@end
+
 @implementation HomeCollectionViewCell
 
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor redColor];
+//        self.backgroundColor = [UIColor redColor];
+        [self.contentView addSubview:self.imageView];
+        [self.contentView addSubview:self.titleLabel];
+        
+        [self layoutSubPages];
     }
     return self;
 }
 
 - (void)configWithData:(NSDictionary *)data{
-//    NSLog(@"%@",data[kPropertyFocusImgPath]);
+    NSLog(@"%@",data);
+    
+    NSString *imageString = [data objectForKey:@"coverImgUrl"];
+    NSString *compressString = Compress(imageString, _imageView.frame.size.width);
+    [_imageView sd_setImageWithURL:[NSURL URLWithString:compressString] placeholderImage:[UIImage imageNamed:@"default_big"]];
+    self.titleLabel.text = [data objectForKey:@"resourceName"];
+
 }
+
+-(void)layoutSubPages{
+    //图片
+    CGFloat itemWidth = (kScreenWidth - 55) / 2;
+    CGFloat itemHeight = (itemWidth * 9/16);
+    
+    [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(itemWidth, itemHeight));
+        make.top.equalTo(self).offset(15);
+    }];
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_imageView.mas_bottom);
+        make.centerX.equalTo(self);
+        make.width.equalTo([NSNumber numberWithFloat:itemWidth]);
+    }];
+}
+
+-(UIImageView *)imageView{
+    if (_imageView == nil) {
+        CGFloat itemWidth = (kScreenWidth - 55) / 2;
+        CGFloat itemHeight = (itemWidth * 9/16);
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, itemWidth,itemHeight)];
+        _imageView.image = [UIImage imageNamed:@"default_big"];
+    }
+    return _imageView;
+}
+
+-(UILabel *)titleLabel{
+    if (_titleLabel == nil) {
+        _titleLabel = [[UILabel alloc] init];
+        _titleLabel.font = [UIFont systemFontOfSize:13.0];
+        _titleLabel.textColor = [UIColor blackColor];
+        _titleLabel.text = @"test";
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _titleLabel;
+}
+
 
 @end
 
