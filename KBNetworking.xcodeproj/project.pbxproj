@@ -59,6 +59,7 @@
 		4C695F4C1D81663400049AB7 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 4C695F461D81663400049AB7 /* Shader.fsh */; };
 		4C695F4D1D81663400049AB7 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 4C695F471D81663400049AB7 /* Shader.vsh */; };
 		4C695F501D8169AC00049AB7 /* ResourcesNewUrlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C695F4F1D8169AC00049AB7 /* ResourcesNewUrlManager.m */; };
+		4C695F581D81729300049AB7 /* KBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C695F571D81729300049AB7 /* KBPlayer.m */; };
 		4C799F841CD309F900D7C74C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C799F831CD309F900D7C74C /* main.m */; };
 		4C799F871CD309F900D7C74C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C799F861CD309F900D7C74C /* AppDelegate.m */; };
 		4C799F8A1CD309F900D7C74C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C799F891CD309F900D7C74C /* ViewController.m */; };
@@ -297,6 +298,8 @@
 		4C695F471D81663400049AB7 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
 		4C695F4E1D8169AC00049AB7 /* ResourcesNewUrlManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourcesNewUrlManager.h; sourceTree = "<group>"; };
 		4C695F4F1D8169AC00049AB7 /* ResourcesNewUrlManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourcesNewUrlManager.m; sourceTree = "<group>"; };
+		4C695F561D81729300049AB7 /* KBPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBPlayer.h; sourceTree = "<group>"; };
+		4C695F571D81729300049AB7 /* KBPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBPlayer.m; sourceTree = "<group>"; };
 		4C6D3B4F1CFFE58400B0D120 /* VRShowFunDefineHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VRShowFunDefineHeader.pch; sourceTree = "<group>"; };
 		4C6D3B501CFFE5C700B0D120 /* VRShowStringKeyDefineHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VRShowStringKeyDefineHeader.pch; sourceTree = "<group>"; };
 		4C799F7F1CD309F900D7C74C /* KBNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KBNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -567,6 +570,7 @@
 		4C2ECF8F1CD9DC96001AAAEA /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				4C695F531D81726B00049AB7 /* kbplayer */,
 				4C695F371D8162CB00049AB7 /* View */,
 				4C2ECF951CD9DEF2001AAAEA /* Manager */,
 				4C2ECF901CD9DC96001AAAEA /* Controller */,
@@ -747,6 +751,31 @@
 				4C695F471D81663400049AB7 /* Shader.vsh */,
 			);
 			path = opengl;
+			sourceTree = "<group>";
+		};
+		4C695F531D81726B00049AB7 /* kbplayer */ = {
+			isa = PBXGroup;
+			children = (
+				4C695F541D81726B00049AB7 /* 01 */,
+				4C695F551D81726B00049AB7 /* header */,
+			);
+			path = kbplayer;
+			sourceTree = "<group>";
+		};
+		4C695F541D81726B00049AB7 /* 01 */ = {
+			isa = PBXGroup;
+			children = (
+				4C695F561D81729300049AB7 /* KBPlayer.h */,
+				4C695F571D81729300049AB7 /* KBPlayer.m */,
+			);
+			path = 01;
+			sourceTree = "<group>";
+		};
+		4C695F551D81726B00049AB7 /* header */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = header;
 			sourceTree = "<group>";
 		};
 		4C799F761CD309F900D7C74C = {
@@ -1309,6 +1338,7 @@
 				4C79A02C1CD3122600D7C74C /* VRShowItemView.m in Sources */,
 				4C5DD70F1D00246800FE421F /* UIView+WebCacheOperation.m in Sources */,
 				4C799FEA1CD30D1300D7C74C /* AFHTTPSessionManager.m in Sources */,
+				4C695F581D81729300049AB7 /* KBPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1448,7 +1478,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/KBNetworking/libraries/OpenSSL/include";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KBNetworking/libraries",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/KBNetworking/libraries/OpenSSL/include",
+					"$(PROJECT_DIR)/KBNetworking/libraries/",
+				);
 				INFOPLIST_FILE = KBNetworking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1466,7 +1503,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/KBNetworking/libraries/OpenSSL/include";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KBNetworking/libraries",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/KBNetworking/libraries/OpenSSL/include",
+					"$(PROJECT_DIR)/KBNetworking/libraries/",
+				);
 				INFOPLIST_FILE = KBNetworking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
