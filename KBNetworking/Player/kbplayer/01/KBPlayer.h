@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const KxMovieParameterMinBufferedDuration;  // Float
+extern NSString *const KxMovieParameterMaxBufferedDuration;  // Float
+extern NSString *const KxMovieParameterDisableDeinterlacing;  // BOOL
+
 @interface KBPlayer : NSObject
+
+-(id)initWithPath:(NSString *)path parameters: (NSDictionary *) parameters;
+
+-(void)play;
+-(void)pause;
 
 @end

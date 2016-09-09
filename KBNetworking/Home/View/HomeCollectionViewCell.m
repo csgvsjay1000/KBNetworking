@@ -24,7 +24,6 @@
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-//        self.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:self.imageView];
         [self.contentView addSubview:self.titleLabel];
         
@@ -34,7 +33,6 @@
 }
 
 - (void)configWithData:(NSDictionary *)data{
-    NSLog(@"%@",data);
     
     NSString *imageString = [data objectForKey:@"coverImgUrl"];
     NSString *compressString = Compress(imageString, _imageView.frame.size.width);

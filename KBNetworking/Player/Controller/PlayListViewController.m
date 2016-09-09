@@ -11,13 +11,15 @@
 #import "ResourcesNewUrlManager.h"
 #import "PlayerControlView1_0.h"
 #import "KBEAGLView.h"
+#import "KBPlayer.h"
+
 
 @interface PlayListViewController ()<KBAPIManagerApiCallBackDelegate,UIGestureRecognizerDelegate>
 
 @property(nonatomic,strong)ResourcesDetailApiManager *detailManager;
 @property(nonatomic,strong)PlayerControlView1_0 *controlView;
 @property(nonatomic,strong)KBEAGLView *normalGLView;
-
+@property(nonatomic,strong)KBPlayer *player;
 
 @end
 
@@ -34,6 +36,7 @@
     [self layoutSubPages];
     
     [_normalGLView wait:YES];
+    [self.player play];
 }
 
 
@@ -100,6 +103,13 @@
         _normalGLView = [[KBEAGLView alloc] initWithFrame:CGRectZero];
     }
     return _normalGLView;
+}
+
+-(KBPlayer *)player{
+    if (_player == nil) {
+        _player = [[KBPlayer alloc] initWithPath:nil parameters:nil];
+    }
+    return _player;
 }
 
 @end

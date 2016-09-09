@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C2097541D82593200A051A6 /* KxAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2097531D82593200A051A6 /* KxAudioManager.m */; };
 		4C2ECF2C1CD9D3F0001AAAEA /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2ECF2B1CD9D3F0001AAAEA /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4C2ECF821CD9D475001AAAEA /* BBRSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2ECF2F1CD9D475001AAAEA /* BBRSACryptor.m */; };
 		4C2ECF831CD9D475001AAAEA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4C2ECF321CD9D475001AAAEA /* LICENSE */; };
@@ -122,6 +123,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C2097521D82593200A051A6 /* KxAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxAudioManager.h; sourceTree = "<group>"; };
+		4C2097531D82593200A051A6 /* KxAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxAudioManager.m; sourceTree = "<group>"; };
+		4C2097551D8263ED00A051A6 /* KxLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KxLogger.h; sourceTree = "<group>"; };
 		4C2ECF2A1CD9D3F0001AAAEA /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		4C2ECF2B1CD9D3F0001AAAEA /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		4C2ECF2E1CD9D475001AAAEA /* BBRSACryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBRSACryptor.h; sourceTree = "<group>"; };
@@ -767,6 +771,8 @@
 			children = (
 				4C695F561D81729300049AB7 /* KBPlayer.h */,
 				4C695F571D81729300049AB7 /* KBPlayer.m */,
+				4C2097521D82593200A051A6 /* KxAudioManager.h */,
+				4C2097531D82593200A051A6 /* KxAudioManager.m */,
 			);
 			path = 01;
 			sourceTree = "<group>";
@@ -774,6 +780,7 @@
 		4C695F551D81726B00049AB7 /* header */ = {
 			isa = PBXGroup;
 			children = (
+				4C2097551D8263ED00A051A6 /* KxLogger.h */,
 			);
 			path = header;
 			sourceTree = "<group>";
@@ -1298,6 +1305,7 @@
 				4C5DD70E1D00246800FE421F /* UIImageView+WebCache.m in Sources */,
 				4C79A01B1CD3115300D7C74C /* MoviesViewController.m in Sources */,
 				4C79A0521CD3265700D7C74C /* MASLayoutConstraint.m in Sources */,
+				4C2097541D82593200A051A6 /* KxAudioManager.m in Sources */,
 				4C5DD7671D00387600FE421F /* UIScrollView+MJRefresh.m in Sources */,
 				4C5DD7661D00387600FE421F /* UIScrollView+MJExtension.m in Sources */,
 				4C5DD7611D00387600FE421F /* MJRefreshGifHeader.m in Sources */,
